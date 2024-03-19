@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+int main(){
+    int num3, alg1, alg2, alg3, alg4;
+    int num10;
+    scanf("%d",&num3);
+    
+    alg1 = num3/1000;
+    alg2 = num3%1000/100;
+    alg3 = num3%100/10;
+    alg4 = num3%10;
+    
+    if(alg1 == 2){
+        alg1 = 27;
+    }
+    else{
+        alg1 = 0;
+    }
+    if(num3 > 99){
+        if(alg2==2){
+            alg2 = 9;
+        }
+        else if(alg2 == 1){
+            alg2 = 0;
+        }
+        else{
+            alg2 = -9;
+        }
+    }
+    else{
+       if(alg2==2){
+            alg2 = 9;
+        }
+        else{
+            alg2 = 0;
+        }
+    }
+    if(num3 > 9){
+        if(alg3==2){
+            alg3 = 3;
+        }
+        else if(alg3 == 1){
+            alg3 = 0;
+        }
+        else{
+            alg3 = -3;
+        }
+    }
+    else{
+       if(alg2==2){
+            alg3 = 3;
+        }
+        else{
+            alg3 = 0;
+        }
+    }
+    
+    if(alg4==2){
+        alg4 = 1;
+    }
+    else if(alg4 == 1){
+        alg4 = 0;
+    }
+    else{
+        alg4 = -1;
+    }
+    
+    num10 = alg1 + alg2 + alg3 + alg4;
+    printf("%d", num10);
+    return 0;
+}
