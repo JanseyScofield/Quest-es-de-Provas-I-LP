@@ -90,6 +90,12 @@ main(){
 	else{
 		maxB = (cenB*100) + (dezB*10) + uniB;
 	}
+	if(maxA == 0){
+		maxA = -1;
+	}
+	if(maxB == 0){
+		maxB = -1;
+	}
 	
 	printf("%d e %d", maxA, maxB);
 	
