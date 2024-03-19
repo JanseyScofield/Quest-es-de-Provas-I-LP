@@ -6,7 +6,7 @@ int main(){
     scanf("%d",&num3);
     
     alg1 = num3/1000;
-    alg2 = num3%1000
+    alg2 = num3%1000/100;
     alg3 = num3%100/10;
     alg4 = num3%10;
     
@@ -16,25 +16,43 @@ int main(){
     else{
         alg1 = 0;
     }
-    
-    if(alg2==2){
-        alg2 = 9;
-    }
-    else if(alg2 == 1){
-        alg2 = 0;
-    }
-    else{
-        alg2 = -9;
-    }
-    
-    if(alg3==2){
-        alg3 = 3;
-    }
-    else if(alg3 == 1){
-        alg3 = 0;
+    if(num3 > 99){
+        if(alg2==2){
+            alg2 = 9;
+        }
+        else if(alg2 == 1){
+            alg2 = 0;
+        }
+        else{
+            alg2 = -9;
+        }
     }
     else{
-        alg3 = -3;
+       if(alg2==2){
+            alg2 = 9;
+        }
+        else{
+            alg2 = 0;
+        }
+    }
+    if(num3 > 9){
+        if(alg3==2){
+            alg3 = 3;
+        }
+        else if(alg3 == 1){
+            alg3 = 0;
+        }
+        else{
+            alg3 = -3;
+        }
+    }
+    else{
+       if(alg2==2){
+            alg3 = 3;
+        }
+        else{
+            alg3 = 0;
+        }
     }
     
     if(alg4==2){
