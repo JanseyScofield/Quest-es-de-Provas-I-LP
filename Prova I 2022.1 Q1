@@ -65,21 +65,27 @@ main(){
 	dezB = dezB != maiorD? 0:dezB;
 	uniB = uniB != maiorU? 0:uniB;
 
-	if(dezA==0){
+	if(uniA != 0 && dezA==0){
 		maxA = (cenA*10) + uniA;
 	}
-	else if(uniA==0){
+	else if(uniA==0 && dezA !=0 ){
 		maxA = (cenA*10) + dezA;
+	}
+	else if(uniA==0 && dezA==0){
+		maxA = cenA;
 	}
 	else{
 		maxA = (cenA*100) + (dezA*10) + uniA;
 	}
 	
-	if(dezB==0){
+	if(uniB != 0 && dezB==0){
 		maxB = (cenB*10) + uniB;
 	}
-	else if(uniB==0){
+	else if(uniB==0 && dezB != 0){
 		maxB = (cenB*10) + dezB;
+	}
+	else if(uniB==0 && dezB == 0){
+		maxB = cenB;
 	}
 	else{
 		maxB = (cenB*100) + (dezB*10) + uniB;
