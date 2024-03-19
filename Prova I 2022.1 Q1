@@ -1,0 +1,90 @@
+/*Na álgebra de inteiros foi definida uma nova operação chamada de maximização de inteiros. A maximização de dois números inteiros A e B segue as seguintes regras:
+1. Inicialmente fazemos A e B terem o mesmo número de dígitos, adicionando zeros à esquerda
+conforme necessário.
+2. Então cada dígito de A (do menos significativo ao mais significativo) é comparado com o dígito
+correspondente de B. Nesta comparação, o dígito de menor valor é eliminado do número a que
+pertence (se eles são iguais, nenhum é eliminado).
+3. O resultado da operação é a dupla de números formados pelos dígitos remanescentes. Caso não
+haja dígitos remanescentes em um dos números, o equivalente na dupla resultado para este número
+é -1.
+Por exemplo, considere a maximização de 453 e 92. Após o passo 1, teremos: 453 e 092; em
+seguida compara-se 4 > 0; 5 < 9 e 3>2. Será eliminado o 5 do primeiro número e serão eliminados
+o 0 e o 2 do segundo número. A dupla resultado será (43 e 5). 
+Sua tarefa é escrever um programa em C, que calcule a operação maximização para dois inteiros
+entre 0 e 999.*/
+
+#include <stdio.h>
+
+main(){
+	int numA, cenA, dezA, uniA, maxA;
+	int numB, cenB, dezB, uniB, maxB;
+	int maiorC, maiorD, maiorU;
+	scanf("%d", &numA);
+	scanf("%d", &numB);
+	
+	cenA = numA/100;
+	dezA = numA%100/10;
+	uniA = numA%10;
+	
+	cenB = numB/100;
+	dezB = numB%100/10;
+	uniB = numB%10;
+	
+	if(cenA>cenB){
+		maiorC = cenA;
+	}
+	else if(cenA<cenB){
+		maiorC = cenB;
+	}
+	else{
+		maiorC = (cenA+cenB)/2;
+	}
+	if(dezA>dezB){
+		maiorD = dezA;
+	}
+	else if(dezA<dezB){
+		maiorD = dezB;
+	}
+	else{
+		maiorD = (dezA+dezB)/2;}
+	if(uniA>uniB){
+		maiorU = uniA;
+	}
+	else if(uniA<uniB){
+		maiorU = uniB;
+	}
+	else{
+		maiorU = (uniA+uniB)/2;
+	}
+	
+	cenA = cenA != maiorC? 0:cenA;
+	dezA = dezA != maiorD? 0:dezA;
+	uniA = uniA != maiorU? 0:uniA;
+	
+	cenB = cenB != maiorC? 0:cenB;
+	dezB = dezB != maiorD? 0:dezB;
+	uniB = uniB != maiorU? 0:uniB;
+
+	if(dezA==0){
+		maxA = (cenA*10) + uniA;
+	}
+	else if(uniA==0){
+		maxA = (cenA*10) + dezA;
+	}
+	else{
+		maxA = (cenA*100) + (dezA*10) + uniA;
+	}
+	
+	if(dezB==0){
+		maxB = (cenB*10) + uniB;
+	}
+	else if(uniB==0){
+		maxB = (cenB*10) + dezB;
+	}
+	else{
+		maxB = (cenB*100) + (dezB*10) + uniB;
+	}
+	
+	printf("%d e %d", maxA, maxB);
+	
+}
