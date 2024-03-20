@@ -47,7 +47,7 @@ int main(){
         }
     }
     else{
-       if(alg2==2){
+       if(alg3==2){
             alg3 = 3;
         }
         else{
